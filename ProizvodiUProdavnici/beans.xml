@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="proizvod1" class="com.vladancupric.Proizvod">
+		<constructor-arg name="naziv" type="String" value="sok"></constructor-arg>
+		<constructor-arg name="barKod" type="long" value="10001"></constructor-arg>
+	</bean>
+	<bean id="proizvod2" class="com.vladancupric.Proizvod">
+		<constructor-arg name="naziv" type="String" value="mleko"></constructor-arg>
+		<constructor-arg name="barKod" type="long" value="10002"></constructor-arg>
+	</bean>
+	<bean id="proizvod3" class="com.vladancupric.Proizvod">
+		<constructor-arg name="naziv" type="String" value="hleb"></constructor-arg>
+		<constructor-arg name="barKod" type="long" value="10003"></constructor-arg>
+	</bean>
+	<bean id="prodavnica" class="com.vladancupric.Prodavnica">
+		<constructor-arg name="naziv" type="String"
+			value="Nasa Mala Prodavnica">
+		</constructor-arg>
+		<constructor-arg >
+			<list>
+				<ref bean="proizvod1" />
+				<ref bean="proizvod2" />
+				<ref bean="proizvod3" />
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
